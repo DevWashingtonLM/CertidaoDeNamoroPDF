@@ -2,6 +2,7 @@ package service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -14,9 +15,14 @@ import model.Cliente;
 
 @Service
 public class ClienteService {
+    private static final long MIN_ID = 1_000_000_000L;
+    private static final long MAX_ID = 9_999_999_999L;
 
     public void gerarPdf(Cliente cliente) {
-        String fileName = "documento_" + cliente.getNumeroDoc() + ".pdf";
+        long idAleatorio = ThreadLocalRandom.current().nextLong(MIN_ID, MAX_ID);
+
+        cliente.setNumeroDoc(idAleatorio);
+        String fileName = "pdf/Certidão_" + cliente.getNumeroDoc() + ".pdf";
 
         try (PDDocument document = new PDDocument()) {
             PDPage page = new PDPage();
