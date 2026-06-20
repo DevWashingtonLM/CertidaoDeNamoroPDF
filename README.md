@@ -48,5 +48,7 @@ http://localhost:8080/api/cliente
 
 Após o envio dos dados, a API gera uma certidão personalizada em PDF utilizando Apache PDFBox.
 <img width="562" height="252" alt="image" src="https://github.com/user-attachments/assets/de371456-4396-4b11-9dda-0aa0b82b849b" />
+<img width="537" height="701" alt="image" src="https://github.com/user-attachments/assets/74d14f11-1ad7-4bc7-8f69-7d2a2958af14" />
+
 
 
